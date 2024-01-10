@@ -4,6 +4,7 @@ const router = express.Router();
 const PacienteController = require("../controllers/PacienteController");
 const MedicoController = require("../controllers/MedicoController");
 const UnidadeController = require("../controllers/UnidadeController");
+const HorariosController = require("../controllers/HorariosController");
 
 router.use(express.json());
 
@@ -28,6 +29,8 @@ router.get("/medico/unidade/:id", MedicoController.getMedicoByUnidade);
 router.get("/unidades/:id", UnidadeController.getUnidades); 
 
 
+//Rotas Horarios 
 
+router.post("/horarios/medico/", HorariosController.getDias);
 
 module.exports = router;

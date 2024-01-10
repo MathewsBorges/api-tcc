@@ -8,10 +8,26 @@ class Medico {
     return rows;
   }
 
+  async getMedicoByID(id) {
+    const [rows] = await connection.query(
+      `SELECT medico.*, especialidade.nome as fk_especialidade FROM medico JOIN especialidade ON medico.fk_especialidade = especialidade.pk_especialidade where medico.status = 1 and medico.pk_medico = ${id}`
+    );
+    return rows;
+  }
+
+
   //Pega o dia e converte em dia da semana
   async getHorariosByDia(id, dia) {
     const [rows] = await connection.query(
       `SELECT * from horarios where fk_medico = '${id}' and dia_semana = '${dia}'`
+    );
+    return rows;
+  }
+
+  async getHorarioByUnidade(id, unidade){
+    const [rows] = await connection.query(
+      `SELECT * from horarios where fk_medico = '${id}' and fk_unidade = '${unidade}'`
+
     );
     return rows;
   }

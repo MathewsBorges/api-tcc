@@ -15,6 +15,9 @@ class Agenda{
     }
 
 
+
+
+
     async agendarConsulta(agendamento){
         try {
             const [rows] = await connection.query(
@@ -44,3 +47,5 @@ class Agenda{
       }
 
 }
+
+module.exports = new Agenda();

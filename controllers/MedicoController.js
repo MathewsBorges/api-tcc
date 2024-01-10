@@ -34,7 +34,7 @@ function obterDiaSemana(data) {
     const dataObjBrasilia = new Date(dataAtualBrasilia);
     
     // getUTCDay() retorna um número de 0 a 6 (0 = domingo, 6 = sábado)
-    const diaSemanaBrasilia = dataObjBrasilia.getUTCDay();
+    const diaSemanaBrasilia = dataObjBrasilia.getUTCDay()+2;
   
     return diaSemanaBrasilia;
   }
