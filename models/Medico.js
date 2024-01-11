@@ -15,23 +15,6 @@ class Medico {
     return rows;
   }
 
-
-  //Pega o dia e converte em dia da semana
-  async getHorariosByDia(id, dia) {
-    const [rows] = await connection.query(
-      `SELECT * from horarios where fk_medico = '${id}' and dia_semana = '${dia}'`
-    );
-    return rows;
-  }
-
-  async getHorarioByUnidade(id, unidade){
-    const [rows] = await connection.query(
-      `SELECT * from horarios where fk_medico = '${id}' and fk_unidade = '${unidade}'`
-
-    );
-    return rows;
-  }
-
   async getMedicoByUnidade(unidade) {
     const [rows] = await connection.query(
       `SELECT DISTINCT medico.*, especialidade.nome AS fk_especialidade

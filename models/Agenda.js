@@ -4,18 +4,6 @@ const connection = require("../database/connection");
 class Agenda{
 
     //retorna os hoarios disponiveis para a respectiva data
-    async getHorariosDisponiveis(data, medico, dia, unidade ){
-        const [rows] = await connection.query(` SELECT *
-        FROM horarios h
-        LEFT JOIN agenda a ON h.pk_horario = a.fk_horario AND a.data = '${data}'
-        WHERE h.fk_medico = ${medico} and h.dia_semana = ${dia}
-        AND h.fk_unidade = ${unidade}
-        AND a.fk_horario IS NULL;`
-        )
-    }
-
-
-
 
 
     async agendarConsulta(agendamento){

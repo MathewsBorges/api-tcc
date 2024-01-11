@@ -21,7 +21,6 @@ router.delete("/paciente/:id", PacienteController.deletePaciente);
 
 //Rotas Médicos
 router.get("/medico/", MedicoController.getMedicos); 
-router.get("/medico/:id/horarios/:data", MedicoController.getHorarios); 
 router.get("/medico/unidade/:id", MedicoController.getMedicoByUnidade);
 
 
@@ -32,5 +31,6 @@ router.get("/unidades/:id", UnidadeController.getUnidades);
 //Rotas Horarios 
 
 router.post("/horarios/medico/", HorariosController.getDias);
+router.post("/horarios/medico/agendamento/", HorariosController.getHorarios)
 
 module.exports = router;
