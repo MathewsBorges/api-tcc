@@ -34,6 +34,15 @@ class Agenda{
        
       }
 
+    async getAgendamentoByPaciente(id){
+      try {
+        const [rows] = await connection.query("select * from agenda where fk_paciente = ? order by data", id)
+        return rows 
+      } catch (e) {
+        return e;
+      }
+    }
+
 }
 
 module.exports = new Agenda();

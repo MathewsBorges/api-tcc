@@ -6,6 +6,11 @@ class Paciente {
     return rows;
   }
 
+  async getPacienteByID(paciente) {
+    const [rows] = await connection.query("select * from paciente where status = 1 and pk_paciente = ?;", paciente);
+    return rows;
+  }
+
   async getLogin(email, senha) {
     const [rows] = await connection.query(
       `select * from paciente where email = '${email}' and senha = '${senha}' and status=1`

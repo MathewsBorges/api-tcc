@@ -19,6 +19,11 @@ class Horarios{
         return rows;
     }
 
+    async getHorarioByID(horario){
+      const [rows] = await connection.query(`select * from horarios where pk_horario = ${horario}`);
+      return rows;
+    }
+
 
 
 
