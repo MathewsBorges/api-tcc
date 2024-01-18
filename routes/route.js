@@ -36,5 +36,6 @@ router.post("/horarios/medico/agendamento/", HorariosController.getHorarios)
 
 
 router.post("/agenda/paciente/", AgendaController.getAgendamentoByPaciente)
+router.post("/agenda/", AgendaController.agendarConsulta)
 
 module.exports = router;
