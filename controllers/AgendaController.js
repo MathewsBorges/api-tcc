@@ -45,6 +45,12 @@ class AgendaController {
     const status = await Agenda.agendarConsulta(agendamento);
     res.json(status)
   }
+
+  async removerConsulta(req, res){
+    const id = req.body.id;
+    const status = await Agenda.deleteAgendamento(id);
+    res.json(status);
+  }
 }
 
 module.exports = new AgendaController();
